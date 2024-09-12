@@ -52,7 +52,7 @@ const ExpenseForm: React.FC = () => {
 
   return (
       <div>
-        <Button onClick={openModal}>Create</Button>
+        <Button className="border !border-black bg-gray-600 hover:!bg-gray-500 !text-white " onClick={openModal}>Create</Button>
         <Modal
             footer={null}
             open={open}
