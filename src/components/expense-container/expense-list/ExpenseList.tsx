@@ -22,7 +22,7 @@ const ExpenseList = () => {
   const {transactionHistory: {income, expense}} = useSelector((state: RootState) => state.transaction)
   const dispatch = useDispatch<AppDispatch>()
 
-  const removeTransactions = (item) => {
+  const removeTransactions = (item: ITransaction) => {
     dispatch(removeTransaction(item))
   }
 
