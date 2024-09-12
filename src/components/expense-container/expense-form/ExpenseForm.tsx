@@ -101,7 +101,7 @@ const ExpenseForm: React.FC = () => {
               actionType && actionType === "income" ? <Form.Item<FieldType>
                       style={{marginBottom: "12px"}}
                       label={`${actionType.capitalize()} type`}
-                      name="incomeType"
+                      name="type"
                       rules={[{required: true, message: 'Please select your income type!'}]}
                   >
                     <Select placeholder="Select income type">
