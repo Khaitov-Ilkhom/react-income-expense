@@ -3,7 +3,7 @@ import {Typography} from "antd"
 import {ITransaction} from "../../../types"
 import currencyFormatter from "currency-formatter";
 import {MdDelete} from "react-icons/md";
-import {AppDispatch} from "../../../redux/store";
+import {AppDispatch, RootState} from "../../../redux/store";
 import {removeTransaction} from "../../../redux/slices/transactionHistory.ts";
 
 const {Title} = Typography
@@ -19,7 +19,7 @@ String.prototype.capitalize = function () {
 }
 
 const ExpenseList = () => {
-  const {transactionHistory: {income, expense}} = useSelector((state: never) => state.transaction)
+  const {transactionHistory: {income, expense}} = useSelector((state: RootState) => state.transaction)
   const dispatch = useDispatch<AppDispatch>()
 
   const removeTransactions = (item) => {

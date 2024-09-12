@@ -4,6 +4,7 @@ import {Chart as ChartJS, ArcElement, Tooltip, Legend} from 'chart.js';
 import currencyFormatter from 'currency-formatter';
 import {Doughnut} from 'react-chartjs-2';
 import type {ITransaction} from "../../../types";
+import {RootState} from "../../../redux/store";
 
 const {Title} = Typography;
 
@@ -11,8 +12,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 const ExpenseDisplay = () => {
-  const {totalAmount} = useSelector((state: any) => state.transaction)
-  const {transactionHistory: {income, expense}} = useSelector((state: never) => state.transaction)
+  const {totalAmount} = useSelector((state: RootState) => state.transaction)
+  const {transactionHistory: {income, expense}} = useSelector((state: RootState) => state.transaction)
   const incomes: number = income.reduce((acc: number, b: ITransaction) => acc + b.amount, 0)
   const expenses: number = expense.reduce((acc: number, b: ITransaction) => acc + b.amount, 0)
 
